@@ -6,10 +6,6 @@ package com.xxbg.jbapi.service.common;
  */
 public class CommonHelper {
 
-//    public static String encodePassword(String metaPassword){
-//
-//    }
-
     public static boolean verifyPassword(String metaPassword,String toVerifyPassword){
         try{
             return metaPassword.equals(toVerifyPassword);
