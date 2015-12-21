@@ -1,7 +1,7 @@
 package com.xxbg.jbapi.service.restcontroller;
 
-import com.xxbg.jbapi.db.service.ProductLikeService;
-import com.xxbg.jbapi.entity.ProductLike;
+import com.xxbg.jbapi.db.service.ProductCommentService;
+import com.xxbg.jbapi.entity.ProductComment;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
@@ -17,22 +17,23 @@ import java.util.HashMap;
  * Created by yanli6 on 12/21/15.
  */
 @RestController
-@RequestMapping("/productLikes")
-public class ProductLikeController {
-    static Logger logger= LogManager.getLogger(ProductLikeController.class);
-    private ProductLikeService productLikeService;
-    public ProductLikeController(){
-        productLikeService=new ProductLikeService();
+@RequestMapping("/productComments")
+public class ProductCommentController {
+    static Logger logger= LogManager.getLogger(ProductCommentController.class);
+    private ProductCommentService productCommentService;
+    public ProductCommentController(){
+        productCommentService=new ProductCommentService();
     }
 
     @RequestMapping(value = "",method = RequestMethod.POST,consumes="application/json")
-    public ResponseEntity<?> updateProductLike(@RequestBody ProductLike productLike){
-        logger.info("POST /productLikes, updateProductLike(),  productId="+productLike.getProductId()+",userId="+productLike.getUserId()+",status="+productLike.getStatus());
+    public ResponseEntity<?> addProductComment(@RequestBody ProductComment productComment){
+        logger.info("POST /productComments, addProductComment(),  productId="+productComment.getProductId()+",userId="+productComment.getUserId()+",commentContent="+productComment.getCommentContent());
         HashMap hashMap=new HashMap();
         try{
-            if(productLikeService.updateProductLike(productLike.getProductId(),productLike.getUserId(),productLike.getStatus())){
-                hashMap.put("message","ok");
-                return new ResponseEntity<>(hashMap, HttpStatus.OK);
+            int id=productCommentService.addProductComment(productComment);
+            if(id>0){
+                hashMap.put("id",id);
+                return new ResponseEntity<>(hashMap, HttpStatus.CREATED);
             }else{
                 hashMap.put("errorMessage","error");
                 return new ResponseEntity<>(hashMap, HttpStatus.INTERNAL_SERVER_ERROR);
