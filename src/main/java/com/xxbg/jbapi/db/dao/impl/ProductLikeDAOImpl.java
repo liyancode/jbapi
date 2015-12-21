@@ -65,8 +65,10 @@ public class ProductLikeDAOImpl implements ProductLikeDAO {
         try{
             ProductLikeDAO productLikeDAO=sqlSession.getMapper(ProductLikeDAO.class);
             productLikeDAO.updateStatus(hashMap);
+            sqlSession.commit();
             return true;
         }catch(Exception e){
+            sqlSession.rollback();
             e.printStackTrace();
             return false;
         }finally {

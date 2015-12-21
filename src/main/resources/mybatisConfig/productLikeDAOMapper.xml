@@ -7,7 +7,10 @@
     <select id="countProductLikeByProductidAndUserid" parameterType="java.util.HashMap" resultType="int">
         select count(*) as ct from product_like where product_id=#{productId} and user_id=#{userId}
     </select>
-
+    <insert id="insertProductLike" parameterType="com.xxbg.jbapi.entity.ProductLike"
+            useGeneratedKeys="true" keyProperty="id">
+        insert into product_like(product_id,user_id,status,insert_time) values (#{productId},#{userId},#{status},#{insertTime})
+    </insert>
     <update id="updateStatus" parameterType="java.util.HashMap">
         update product_like SET
         status = #{status}

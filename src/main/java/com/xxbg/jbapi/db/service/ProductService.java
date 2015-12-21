@@ -39,17 +39,6 @@ public class ProductService {
         return productDAO.getProductById(id);
     }
 
-//    public List<Product> getAllProducts(){
-//        return productDAO.getAllProducts();
-//    }
-//
-//    public List<Product> getProductsByCategoryIdAndSort(int categoryId,String sort){
-//        HashMap hashMap=new HashMap();
-//        hashMap.put("categoryId",categoryId);
-//        hashMap.put("sort",sort);
-//        return productDAO.getProductsByCategoryIdAndSort(hashMap);
-//    }
-
     public List<Product> getProducts(Integer categoryId,Integer status,String sort,Integer page){
         logger.info("getProducts("+categoryId+","+status+","+sort+","+page+")");
         try{
