@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxbg.jbapi.db.dao.ProductDAO">
+
+    <!--
+        根据id查询得到一个user对象
+     -->
+    <select id="getProductById" parameterType="int"
+            resultType="com.xxbg.jbapi.entity.Product">
+        select * from product where id=#{id}
+    </select>
+    <select id="getProducts" parameterType="java.util.HashMap" resultType="com.xxbg.jbapi.entity.Product">
+        select * from product limit #{offset},#{limit}
+    </select>
+    <select id="getProductsByCategoryId" parameterType="java.util.HashMap" resultType="com.xxbg.jbapi.entity.Product">
+        select * from product where product_category_id=#{categoryId} limit #{offset},#{limit}
+    </select>
+    <select id="getProductsByCategoryIdAndStatus" parameterType="java.util.HashMap" resultType="com.xxbg.jbapi.entity.Product">
+        select * from product where product_category_id=#{categoryId} and status=#{status} limit #{offset},#{limit}
+    </select>
+    <select id="getProductsByCategoryIdAndSort" parameterType="java.util.HashMap" resultType="com.xxbg.jbapi.entity.Product">
+        select * from product where product_category_id=#{categoryId} order by ${sort} desc limit #{offset},#{limit}
+    </select>
+    <select id="getProductsByCategoryIdAndStatusAndSort" parameterType="java.util.HashMap" resultType="com.xxbg.jbapi.entity.Product">
+        select * from product where product_category_id=#{categoryId} and status=#{status} order by ${sort} desc limit #{offset},#{limit}
+    </select>
+    <select id="getProductsByStatus" parameterType="java.util.HashMap" resultType="com.xxbg.jbapi.entity.Product">
+        select * from product where status=#{status} limit #{offset},#{limit}
+    </select>
+    <select id="getProductsByStatusAndSort" parameterType="java.util.HashMap" resultType="com.xxbg.jbapi.entity.Product">
+        select * from product where status=#{status} order by ${sort} desc limit #{offset},#{limit}
+    </select>
+    <select id="getProductsBySort" parameterType="java.util.HashMap" resultType="com.xxbg.jbapi.entity.Product">
+        select * from product order by ${sort} desc limit #{offset},#{limit}
+    </select>
+
+    <insert id="insertProduct" parameterType="com.xxbg.jbapi.entity.Product"
+            useGeneratedKeys="true" keyProperty="id">
+        insert into product(product_category_id,status,title,description,current_price,history_price,count,comment_count,like_count,insert_time,insert_by,update_time,update_by) values (#{productCategoryId},#{status},#{title},#{description},#{currentPrice},#{historyPrice},#{count},#{commentCount},#{likeCount},#{insertTime},#{insertBy},#{updateTime},#{updateBy})
+    </insert>
+
+    <!--<update id="updateBook" parameterType="test.Book">-->
+        <!--update book s-->
+        <!--bookName = #{bookName},-->
+        <!--publisher = #{publisher}-->
+        <!--where bookId = #{bookId}-->
+    <!--</update>-->
+
+    <delete id="deleteProductById" parameterType="int">
+        delete from product where id = #{id}
+    </delete>
+</mapper>

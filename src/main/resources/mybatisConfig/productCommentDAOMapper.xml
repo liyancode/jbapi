@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxbg.jbapi.db.dao.ProductCommentDAO">
+    <select id="getCommentsByProductId" parameterType="int" resultType="com.xxbg.jbapi.entity.ProductComment">
+        select * from product_comment where product_id=#{productId}
+    </select>
+    <insert id="insertProductComment" parameterType="com.xxbg.jbapi.entity.ProductComment"
+            useGeneratedKeys="true" keyProperty="id">
+        insert into product_comment(product_id,user_id,insert_time,comment_content,status) values (#{productId},#{userId},#{insertTime},#{commentContent},#{status})
+    </insert>
+</mapper>

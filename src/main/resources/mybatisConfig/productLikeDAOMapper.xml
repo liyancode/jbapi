@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxbg.jbapi.db.dao.ProductLikeDAO">
+    <select id="getLikesByProductId" parameterType="int" resultType="com.xxbg.jbapi.entity.ProductLike">
+        select * from product_like where product_id=#{productId}
+    </select>
+    <select id="countProductLikeByProductidAndUserid" parameterType="java.util.HashMap" resultType="int">
+        select count(*) as ct from product_like where product_id=#{productId} and user_id=#{userId}
+    </select>
+
+    <update id="updateStatus" parameterType="java.util.HashMap">
+        update product_like SET
+        status = #{status}
+        where product_id=#{productId} and user_id=#{userId}
+    </update>
+</mapper>

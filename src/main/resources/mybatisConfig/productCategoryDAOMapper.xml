@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxbg.jbapi.db.dao.ProductCategoryDAO">
+
+    <select id="getProductCategoryById" parameterType="int"
+            resultType="com.xxbg.jbapi.entity.ProductCategory">
+        select * from product_category where id=#{id}
+    </select>
+    <insert id="insertProductCategory" parameterType="com.xxbg.jbapi.entity.ProductCategory"
+            useGeneratedKeys="true" keyProperty="id">
+        insert into product_category(en_name,cn_name,description,insert_time,insert_by,update_time,update_by) values (#{enName},#{cnName},#{description},#{insertTime},#{insertBy},#{updateTime},#{updateBy})
+    </insert>
+
+    <!--<update id="updateBook" parameterType="test.Book">-->
+    <!--update book s-->
+    <!--bookName = #{bookName},-->
+    <!--publisher = #{publisher}-->
+    <!--where bookId = #{bookId}-->
+    <!--</update>-->
+
+    <delete id="deleteProductCategoryById" parameterType="int">
+        delete from product_category where id = #{id}
+    </delete>
+</mapper>
