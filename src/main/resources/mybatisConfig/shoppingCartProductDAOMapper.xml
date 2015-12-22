@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxbg.jbapi.db.dao.ShoppingCartProductDAO">
+    <select id="getByShoppingCartId" parameterType="int" resultType="com.xxbg.jbapi.entity.ShoppingCartProduct">
+        select * from shopping_cart_product where shopping_cart_id=#{shoppingCartId}
+    </select>
+    <insert id="insertShoppingCartProduct" parameterType="com.xxbg.jbapi.entity.ShoppingCartProduct"
+            useGeneratedKeys="true" keyProperty="id">
+        insert into shopping_cart_product(shopping_cart_id,product_id,product_count,total_price) values (#{shoppingCartId},#{productId},#{productCount},#{totalPrice})
+    </insert>
+    <update id="updateShoppingCartProduct" parameterType="com.xxbg.jbapi.entity.ShoppingCartProduct">
+        update shopping_cart_product SET
+        product_count = #{productCount},
+        total_price=#{totalPrice}
+        where shopping_cart_id=#{shoppingCartId} and product_id=#{productId}
+    </update>
+
+    <delete id="deleteShoppingCartProductById" parameterType="int">
+        delete from shopping_cart_product where id = #{id}
+    </delete>
+</mapper>

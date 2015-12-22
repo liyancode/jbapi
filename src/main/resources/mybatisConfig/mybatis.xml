@@ -23,6 +23,7 @@
         <mapper resource="mybatisConfig/productCommentDAOMapper.xml"/>
         <mapper resource="mybatisConfig/productLikeDAOMapper.xml"/>
         <mapper resource="mybatisConfig/userDAOMapper.xml"/>
+        <mapper resource="mybatisConfig/shoppingCartDAOMapper.xml"/>
     </mappers>
 
 </configuration>
