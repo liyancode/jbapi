@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by yanli6 on 12/13/15.
+ * Created by {liyan.code@gmail.com} on 12/13/15.
  */
 public class ProductLikeDAOImpl implements ProductLikeDAO {
 

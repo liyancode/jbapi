@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 
 /**
- * Created by yanli6 on 12/13/15.
+ * Created by {liyan.code@gmail.com} on 12/13/15.
  */
 public class ProductCommentService {
     static Logger logger= LogManager.getLogger(ProductCommentService.class);

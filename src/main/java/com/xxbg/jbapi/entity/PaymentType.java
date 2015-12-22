@@ -1,7 +1,7 @@
 package com.xxbg.jbapi.entity;
 
 /**
- * Created by yanli6 on 12/2/15.
+ * Created by {liyan.code@gmail.com} on 12/2/15.
  */
 public class PaymentType {
     private int id;

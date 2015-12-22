@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 
 /**
- * Created by yanli6 on 12/1/15.
+ * Created by {liyan.code@gmail.com} on 12/1/15.
  */
 @RestController
 @RequestMapping("/products")

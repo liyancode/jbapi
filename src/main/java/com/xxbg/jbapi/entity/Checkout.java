@@ -3,7 +3,7 @@ package com.xxbg.jbapi.entity;
 import java.util.Date;
 
 /**
- * Created by yanli6 on 12/2/15.
+ * Created by {liyan.code@gmail.com} on 12/2/15.
  */
 public class Checkout {
     private int id;

@@ -7,7 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * Created by yanli6 on 12/16/15.
+ * Created by {liyan.code@gmail.com} on 12/16/15.
  */
 public class UserService {
     static Logger logger= LogManager.getLogger(UserService.class);

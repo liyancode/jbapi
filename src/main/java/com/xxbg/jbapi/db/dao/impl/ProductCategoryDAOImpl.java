@@ -7,7 +7,7 @@ import com.xxbg.jbapi.util.Util;
 import org.apache.ibatis.session.SqlSession;
 
 /**
- * Created by yanli6 on 12/8/15.
+ * Created by {liyan.code@gmail.com} on 12/8/15.
  */
 public class ProductCategoryDAOImpl implements ProductCategoryDAO {
     @Override

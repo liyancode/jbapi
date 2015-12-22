@@ -9,7 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import java.util.List;
 
 /**
- * Created by yanli6 on 12/22/15.
+ * Created by {liyan.code@gmail.com} on 12/22/15.
  */
 public class ShoppingCartProductDAOImpl implements ShoppingCartProductDAO {
     @Override

@@ -5,7 +5,7 @@ import com.xxbg.jbapi.db.dao.impl.ProductCategoryDAOImpl;
 import com.xxbg.jbapi.entity.ProductCategory;
 
 /**
- * Created by yanli6 on 12/8/15.
+ * Created by {liyan.code@gmail.com} on 12/8/15.
  */
 public class ProductCategoryService {
     private ProductCategoryDAO productCategoryDAO;

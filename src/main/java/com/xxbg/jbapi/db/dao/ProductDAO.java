@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by yanli6 on 11/30/15.
+ * Created by {liyan.code@gmail.com} on 11/30/15.
  */
 public interface ProductDAO {
     /**

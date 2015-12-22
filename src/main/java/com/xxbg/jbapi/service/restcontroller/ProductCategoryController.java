@@ -5,7 +5,7 @@ import com.xxbg.jbapi.entity.ProductCategory;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * Created by yanli6 on 12/8/15.
+ * Created by {liyan.code@gmail.com} on 12/8/15.
  */
 @RestController
 @RequestMapping("/productCategories")

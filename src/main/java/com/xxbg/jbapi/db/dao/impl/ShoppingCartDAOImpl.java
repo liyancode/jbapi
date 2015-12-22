@@ -7,7 +7,7 @@ import com.xxbg.jbapi.util.Util;
 import org.apache.ibatis.session.SqlSession;
 
 /**
- * Created by yanli6 on 12/22/15.
+ * Created by {liyan.code@gmail.com} on 12/22/15.
  */
 public class ShoppingCartDAOImpl implements ShoppingCartDAO {
     @Override
