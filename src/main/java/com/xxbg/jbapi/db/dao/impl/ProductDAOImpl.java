@@ -202,4 +202,68 @@ public class ProductDAOImpl implements ProductDAO {
             sqlSession.close();
         }
     }
+
+    @Override
+    public boolean commentCountMinusOne(int id) {
+        SqlSession sqlSession=new MyBatis(Util.MYBATIS_XML).getSession();
+        try{
+            ProductDAO productDAO=sqlSession.getMapper(ProductDAO.class);
+            productDAO.commentCountMinusOne(id);
+            sqlSession.commit();
+            return true;
+        }catch(Exception e){
+            e.printStackTrace();
+            return false;
+        }finally {
+            sqlSession.close();
+        }
+    }
+
+    @Override
+    public boolean commentCountPlusOne(int id) {
+        SqlSession sqlSession=new MyBatis(Util.MYBATIS_XML).getSession();
+        try{
+            ProductDAO productDAO=sqlSession.getMapper(ProductDAO.class);
+            productDAO.commentCountPlusOne(id);
+            sqlSession.commit();
+            return true;
+        }catch(Exception e){
+            e.printStackTrace();
+            return false;
+        }finally {
+            sqlSession.close();
+        }
+    }
+
+    @Override
+    public boolean likeCountMinusOne(int id) {
+        SqlSession sqlSession=new MyBatis(Util.MYBATIS_XML).getSession();
+        try{
+            ProductDAO productDAO=sqlSession.getMapper(ProductDAO.class);
+            productDAO.likeCountMinusOne(id);
+            sqlSession.commit();
+            return true;
+        }catch(Exception e){
+            e.printStackTrace();
+            return false;
+        }finally {
+            sqlSession.close();
+        }
+    }
+
+    @Override
+    public boolean likeCountPlusOne(int id) {
+        SqlSession sqlSession=new MyBatis(Util.MYBATIS_XML).getSession();
+        try{
+            ProductDAO productDAO=sqlSession.getMapper(ProductDAO.class);
+            productDAO.likeCountPlusOne(id);
+            sqlSession.commit();
+            return true;
+        }catch(Exception e){
+            e.printStackTrace();
+            return false;
+        }finally {
+            sqlSession.close();
+        }
+    }
 }

@@ -28,4 +28,12 @@ public interface ProductDAO {
     List<Product> getProductsByStatus(HashMap hashMap);
     List<Product> getProductsByStatusAndSort(HashMap hashMap);
     List<Product> getProductsBySort(HashMap hashMap);
+
+    /**
+     * update *_count
+     * */
+    boolean commentCountMinusOne(int id);
+    boolean commentCountPlusOne(int id);
+    boolean likeCountMinusOne(int id);
+    boolean likeCountPlusOne(int id);
 }

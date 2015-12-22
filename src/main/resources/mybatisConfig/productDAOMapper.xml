@@ -49,4 +49,26 @@
     <delete id="deleteProductById" parameterType="int">
         delete from product where id = #{id}
     </delete>
+
+    <!-- update-->
+    <update id="commentCountMinusOne" parameterType="int">
+        update product set
+        comment_count = comment_count-1
+        where id = #{id}
+    </update>
+    <update id="commentCountPlusOne" parameterType="int">
+        update product set
+        comment_count = comment_count+1
+        where id = #{id}
+    </update>
+    <update id="likeCountMinusOne" parameterType="int">
+        update product set
+        like_count = like_count-1
+        where id = #{id}
+    </update>
+    <update id="likeCountPlusOne" parameterType="int">
+        update product set
+        like_count = like_count+1
+        where id = #{id}
+    </update>
 </mapper>

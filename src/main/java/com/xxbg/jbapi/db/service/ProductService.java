@@ -40,7 +40,7 @@ public class ProductService {
     }
 
     public List<Product> getProducts(Integer categoryId,Integer status,String sort,Integer page){
-        logger.info("getProducts("+categoryId+","+status+","+sort+","+page+")");
+        logger.info("getProducts(" + categoryId + "," + status + "," + sort + "," + page + ")");
         try{
             HashMap hashMap=new HashMap();
             hashMap.put("offset",page.intValue()*Util.LIMIT_COUNT_PER_PAGE);
@@ -83,6 +83,41 @@ public class ProductService {
             }
         }catch(Exception e){
             return null;
+        }
+    }
+
+    /**
+     *
+     * @param minusOrPlus Util.MINUS or Util.PLUS
+     */
+    public boolean updateCommentCount(int product_id,String minusOrPlus){
+        try{
+            if(minusOrPlus.equals(Util.MINUS)){
+                return productDAO.commentCountMinusOne(product_id);
+            }else if (minusOrPlus.equals(Util.PLUS)){
+                return productDAO.commentCountPlusOne(product_id);
+            }else{
+                return false;
+            }
+        }catch(Exception e){
+            return false;
+        }
+    }
+    /**
+     *
+     * @param minusOrPlus Util.MINUS or Util.PLUS
+     */
+    public boolean updateLikeCount(int product_id,String minusOrPlus){
+        try{
+            if(minusOrPlus.equals(Util.MINUS)){
+                return productDAO.likeCountMinusOne(product_id);
+            }else if (minusOrPlus.equals(Util.PLUS)){
+                return productDAO.likeCountPlusOne(product_id);
+            }else{
+                return false;
+            }
+        }catch(Exception e){
+            return false;
         }
     }
 }
