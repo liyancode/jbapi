@@ -3,6 +3,8 @@ package com.xxbg.jbapi.db.service;
 import com.xxbg.jbapi.db.dao.ExpressAddressDAO;
 import com.xxbg.jbapi.db.dao.impl.ExpressAddressDAOImpl;
 import com.xxbg.jbapi.entity.ExpressAddress;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
@@ -10,6 +12,8 @@ import java.util.List;
  * Created by {liyan.code@gmail.com} on 12/23/15.
  */
 public class ExpressAddressService {
+    static Logger logger= LogManager.getLogger(ExpressAddressService.class);
+
     private ExpressAddressDAO expressAddressDAO;
 
     public ExpressAddressService(){
