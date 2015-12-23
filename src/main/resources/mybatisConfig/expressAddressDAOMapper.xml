@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxbg.jbapi.db.dao.ExpressAddressDAO">
+    <select id="getExpressAddressesByUserId" parameterType="int" resultType="com.xxbg.jbapi.entity.ExpressAddress">
+        select * from express_address where user_id=#{userId}
+    </select>
+    <insert id="insertExpressAddress" parameterType="com.xxbg.jbapi.entity.ExpressAddress"
+            useGeneratedKeys="true" keyProperty="id">
+        insert into express_address(user_id,contact_name,phone_number,province,city,district,zip_code,detail_address,isdefault,insert_time,insert_by,update_time,update_by)
+        values (#{userId},#{contactName},#{phoneNumber},#{province},#{city},#{district},#{zipCode},#{detailAddress},#{isDefault},#{insertTime},#{insertBy},#{updateTime},#{updateBy})
+    </insert>
+    <update id="updateExpressAddress" parameterType="com.xxbg.jbapi.entity.ExpressAddress">
+        update express_address SET
+        contact_name = #{product_count},
+        phone_number = #{product_count},
+        province = #{province},
+        city = #{city},
+        district = #{district},
+        zip_code = #{zipCode},
+        detail_address = #{detailAddress},
+        isdefault=#{isDefault},
+        update_time=#{updateTime},
+        update_by=#{updateBy}
+        where id=#{id}
+    </update>
+</mapper>
