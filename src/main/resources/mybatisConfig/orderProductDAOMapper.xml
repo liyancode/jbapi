@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxbg.jbapi.db.dao.OrderProductDAO">
+    <select id="getOrderProductsByOrderId" parameterType="int" resultType="com.xxbg.jbapi.entity.OrderProduct">
+        select * from order where order_id=#{orderId}
+    </select>
+    <insert id="insertOrder" parameterType="com.xxbg.jbapi.entity.OrderProduct"
+            useGeneratedKeys="true" keyProperty="id">
+        insert into order_product(order_id,product_id,product_count,total_price,insert_time) values (#{orderId},#{productId},#{productCount},#{totalPrice},#{insertTime})
+    </insert>
+    <update id="updateOrder" parameterType="com.xxbg.jbapi.entity.OrderProduct">
+        update order_product SET
+        product_count = #{product_count},
+        total_price=#{totalPrice},
+        insert_time=#{insertTime}
+        where id=#{id}
+    </update>
+</mapper>
