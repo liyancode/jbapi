@@ -2,24 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xxbg.jbapi.db.dao.PaymentTypeDAO">
 
-    <!--
-        根据id查询得到一个user对象
-     -->
     <select id="getPaymentTypeById" parameterType="int"
             resultType="com.xxbg.jbapi.entity.PaymentType">
         select * from payment_type where id=#{id}
     </select>
+    <select id="getAllPaymentTypes" resultType="com.xxbg.jbapi.entity.PaymentType">
+        select * from payment_type
+    </select>
+
     <insert id="insertPaymentType" parameterType="com.xxbg.jbapi.entity.PaymentType"
             useGeneratedKeys="true" keyProperty="id">
         insert into payment_type(en_name,cn_name) values (#{enName},#{cnName})
     </insert>
 
-    <!--<update id="updateBook" parameterType="test.Book">-->
-    <!--update book s-->
-    <!--bookName = #{bookName},-->
-    <!--publisher = #{publisher}-->
-    <!--where bookId = #{bookId}-->
-    <!--</update>-->
+    <update id="updatePaymentType" parameterType="com.xxbg.jbapi.entity.PaymentType">
+    update payment_type set
+    en_name = #{enName},
+    cn_name = #{cnName}
+    where id=#{id}
+    </update>
 
     <delete id="deletePaymentTypeById" parameterType="int">
         delete from payment_type where id = #{id}

@@ -2,6 +2,8 @@ package com.xxbg.jbapi.db.dao;
 
 import com.xxbg.jbapi.entity.PaymentType;
 
+import java.util.List;
+
 /**
  * Created by {liyan.code@gmail.com} on 12/2/15.
  */
@@ -10,4 +12,5 @@ public interface PaymentTypeDAO {
     boolean deletePaymentTypeById(int id);
     boolean updatePaymentType(PaymentType paymentType);
     PaymentType getPaymentTypeById(int id);
+    List<PaymentType> getAllPaymentTypes();
 }
