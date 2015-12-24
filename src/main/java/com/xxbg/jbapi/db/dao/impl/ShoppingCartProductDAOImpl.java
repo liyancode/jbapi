@@ -75,4 +75,18 @@ public class ShoppingCartProductDAOImpl implements ShoppingCartProductDAO {
             sqlSession.close();
         }
     }
+
+    @Override
+    public int existedCount(ShoppingCartProduct shoppingCartProduct) {
+        SqlSession sqlSession=new MyBatis(Util.MYBATIS_XML).getSession();
+        try{
+            ShoppingCartProductDAO shoppingCartProductDAO=sqlSession.getMapper(ShoppingCartProductDAO.class);
+            return shoppingCartProductDAO.existedCount(shoppingCartProduct);
+        }catch(Exception e){
+            e.printStackTrace();
+            return -1;
+        }finally {
+            sqlSession.close();
+        }
+    }
 }

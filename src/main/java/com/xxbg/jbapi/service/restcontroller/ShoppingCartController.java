@@ -70,4 +70,21 @@ public class ShoppingCartController {
             return new ResponseEntity<>(hashMap,HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    @RequestMapping(value = "",method = RequestMethod.PUT,consumes="application/json")
+    public ResponseEntity<?> updateShoppingCartByUserId(@RequestBody ShoppingCart shoppingCart){
+        HashMap hashMap=new HashMap();
+        try{
+            shoppingCart.setUpdateTime(new Date());
+            if(shoppingCartService.updateShoppingCart(shoppingCart)){
+                hashMap.put("message","update shopping cart ok.");
+                return new ResponseEntity<>(hashMap,HttpStatus.OK);
+            }else{
+                hashMap.put("message","update shopping cart fail.");
+                return new ResponseEntity<>(hashMap,HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+        }catch (Exception e){
+            hashMap.put("errorMessage",e.getMessage());
+            return new ResponseEntity<>(hashMap,HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

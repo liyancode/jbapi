@@ -12,4 +12,5 @@ public interface ShoppingCartProductDAO {
     boolean updateShoppingCartProduct(ShoppingCartProduct shoppingCartProduct);
     boolean deleteShoppingCartProductById(int id);
     List<ShoppingCartProduct> getByShoppingCartId(int shoppingCartId);
+    int existedCount(ShoppingCartProduct shoppingCartProduct);
 }

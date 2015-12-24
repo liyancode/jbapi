@@ -30,4 +30,12 @@ public class ShoppingCartProductService {
     public boolean deleteShoppingCartProductById(int id){
         return shoppingCartProductDAO.deleteShoppingCartProductById(id);
     }
+
+    public boolean existed(ShoppingCartProduct shoppingCartProduct){
+        if(shoppingCartProductDAO.existedCount(shoppingCartProduct)>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
