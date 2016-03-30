@@ -18,12 +18,18 @@
     </environments>
 
     <mappers>
+        <mapper resource="mybatisConfig/checkoutDAOMapper.xml"/>
+        <mapper resource="mybatisConfig/expressAddressDAOMapper.xml"/>
+        <mapper resource="mybatisConfig/orderDAOMapper.xml"/>
+        <mapper resource="mybatisConfig/orderProductDAOMapper.xml"/>
+        <mapper resource="mybatisConfig/paymentTypeDAOMapper.xml"/>
         <mapper resource="mybatisConfig/productDAOMapper.xml"/>
         <mapper resource="mybatisConfig/productCategoryDAOMapper.xml"/>
         <mapper resource="mybatisConfig/productCommentDAOMapper.xml"/>
         <mapper resource="mybatisConfig/productLikeDAOMapper.xml"/>
         <mapper resource="mybatisConfig/userDAOMapper.xml"/>
         <mapper resource="mybatisConfig/shoppingCartDAOMapper.xml"/>
+        <mapper resource="mybatisConfig/shoppingCartProductDAOMapper.xml"/>
     </mappers>
 
 </configuration>

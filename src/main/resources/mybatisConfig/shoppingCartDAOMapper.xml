@@ -6,7 +6,7 @@
     </select>
     <insert id="insertShoppingCart" parameterType="com.xxbg.jbapi.entity.ShoppingCart"
             useGeneratedKeys="true" keyProperty="id">
-        insert into shopping_cart(user_id,product_count,total_price,insert_time,insert_by,update_time,update_by) values (#{userId},#{productCount},#{totalPrice},#{likeCount},#{insertTime},#{insertBy},#{updateTime},#{updateBy})
+        insert into shopping_cart(user_id,product_count,total_price,insert_time,insert_by,update_time,update_by) values (#{userId},#{productCount},#{totalPrice},#{insertTime},#{insertBy},#{updateTime},#{updateBy})
     </insert>
     <update id="updateShoppingCart" parameterType="com.xxbg.jbapi.entity.ShoppingCart">
         update shopping_cart SET
